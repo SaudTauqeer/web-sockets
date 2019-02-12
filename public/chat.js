@@ -15,7 +15,7 @@ btn.addEventListener("click", () => {
   message.value = "";
 });
 
-message.addEventListener("input", () => {
+message.addEventListener("keypress", () => {
   socket.emit("typing", handle.value);
 });
 
