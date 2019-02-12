@@ -1,5 +1,5 @@
 //socket connection
-const socket = io.connect(process.env.PORT);
+const socket = io();
 
 const message = document.getElementById("message");
 const handle = document.getElementById("handle");
