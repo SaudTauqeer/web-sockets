@@ -15,10 +15,15 @@ btn.addEventListener("click", () => {
   message.value = "";
 });
 
-message.addEventListener("keypress", () => {
+message.addEventListener("input", () => {
   socket.emit("typing", handle.value);
 });
 
 socket.on("chat", data => {
+  feedback.innerHTML = "";
   output.innerHTML += `<p><strong>${data.name}</strong>: ${data.message} </p>`;
+});
+
+socket.on("typing", data => {
+  feedback.innerHTML = `<p><em>${data}</em> is typing...</p>`;
 });
