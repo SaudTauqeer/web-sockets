@@ -17,4 +17,7 @@ let io = socket(server);
 
 io.on("connect", socket => {
   console.log("Websocket connection established");
+  socket.on("chat", data => {
+    io.sockets.emit("chat", data);
+  });
 });
