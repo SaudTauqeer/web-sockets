@@ -10,7 +10,7 @@
     "serve": "node dist/server.js",
     "watch-node": "nodemon dist/server.js",
     "watch-ts": "tsc -w",
-    "heroku-postbuild": "npm run build-ts && npm run serve"
+    "heroku-postbuild": "npm run build-ts"
   },
   "repository": {
     "type": "git",
