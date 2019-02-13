@@ -4,7 +4,7 @@ import socket from "socket.io";
 import path from "path";
 //server setup
 const app = express();
-const port: any = process.env.PORT;
+const port: any = process.env.PORT || 3000;
 
 //static
 app.use(express.static("public"));

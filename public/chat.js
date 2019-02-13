@@ -15,6 +15,16 @@ btn.addEventListener("click", () => {
   message.value = "";
 });
 
+message.addEventListener("keydown", e => {
+  if (e.keyCode === 13) {
+    socket.emit("chat", {
+      message: message.value,
+      name: handle.value
+    });
+    message.value = "";
+  }
+});
+
 message.addEventListener("keypress", () => {
   socket.emit("typing", handle.value);
 });
